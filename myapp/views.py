@@ -10,7 +10,9 @@ def index(request):
              'city': data['name'], 
              'weather': data['weather'][0]['main'], 
              'icon': data['weather'][0]['icon'], 
-             'temperature': int(data['main']['temp'] -273) , 
+             'description': data['weather'][0]['description'],
+             'kelvin_temperature' :data['main']['temp'],
+             'celcius_temperature': int(data['main']['temp'] -273) , 
              'pressure': data['main']['pressure'], 
              'humidity': data['main']['humidity']
              }
